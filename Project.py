@@ -87,7 +87,7 @@ elif selected == 'Elopyx1-3':
     
 else:
     st.title('Hello friends, leys give a shot for project Elopyx1-4')
-    st.markdown("Wanna mwke money online read this [article](https://www.ryrob.com/make-money-online/) from the best blogger in the market.")
+    st.write("Wanna make money online read this [article](https://www.ryrob.com/make-money-online/) from the best blogger in the market.")
 
 
 
