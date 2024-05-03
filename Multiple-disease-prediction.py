@@ -9,6 +9,8 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+
+st.set_page_config(page_title="Elopyx-Medics", layout='wide',page_icon=":pill:")
 # loading the models
 diabetes_model = pickle.load(open("diabetes_model.sav",'rb'))
 heart_disease_model = pickle.load(open("heart.sav",'rb'))
@@ -17,7 +19,7 @@ parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 
 # the side bar for navigation
 with st.sidebar:
-    selected = option_menu('Multiple disease prediction using ML tools👌',
+    selected = option_menu('Multiple disease prediction using machine learning ',
                           ['Diabetes prediction',
                            'Heart disease prediction',
                            'Parkinson`s disease pediction'
@@ -30,7 +32,8 @@ with st.sidebar:
 # diabetes prediction page
 if selected == 'Diabetes prediction':
     # title 
-    st.title('Diabetes prediction tool')
+    st.title('Diabetes prediction')
+    st.markdown('<style>div.block-container{padding-top:1rem}</style>',unsafe_allow_html=True)
     #getting user input
     col1,col2,col3 = st.columns(3)
     
@@ -60,17 +63,19 @@ if selected == 'Diabetes prediction':
 elif selected == 'Heart disease prediction':
     
     #title
-   st.title('Heart disease prediction tool')
+   st.title('Heart disease prediction')
+   st.markdown('<style>div.block-container{padding-top:1rem}</style>',unsafe_allow_html=True)
+
    col1, col2, col3 = st.columns(3)
 
    with col1:
        age = st.text_input('Age')
 
    with col2:
-       sex = st.text_input('Sex')
+       sex = st.text_input('Sex: 0=Male; 1=Female')
 
    with col3:
-       cp = st.text_input('Chest Pain types')
+       cp = st.text_input('Chest Pain type: 0=Typical angina; 1=Atypical angina; 2=Non-anginal; 3=Asymptomatic')
 
    with col1:
        trestbps = st.text_input('Resting Blood Pressure')
@@ -79,28 +84,28 @@ elif selected == 'Heart disease prediction':
        chol = st.text_input('Serum Cholestoral in mg/dl')
 
    with col3:
-       fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl')
+       fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl(0=Yes; 1=No )')
 
    with col1:
-       restecg = st.text_input('Resting Electrocardiographic results')
+       restecg = st.text_input('Resting Electrocardiographic results: 0=Normal; 1=STT abnormality; 2=LV hypertrophy')
 
    with col2:
        thalach = st.text_input('Maximum Heart Rate achieved')
 
    with col3:
-       exang = st.text_input('Exercise Induced Angina')
+       exang = st.text_input('Exercise Induced Angina: 0=TRUE; 1=FALSE')
 
    with col1:
-       oldpeak = st.text_input('ST depression induced by exercise')
+       oldpeak = st.text_input('ST depression induced by exercise(old peak)')
 
    with col2:
        slope = st.text_input('Slope of the peak exercise ST segment')
 
    with col3:
-       ca = st.text_input('Major vessels colored by flourosopy')
+       ca = st.text_input('Number of major vessels colored by flourosopy:eg; 0,1,2......')
 
    with col1:
-       thal = st.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
+       thal = st.text_input('Thalassemia: 0 = normal; 1 = fixed defect; 2 = reversable defect')
 
    # code for Prediction
    heart_diagnosis = ''
@@ -125,50 +130,64 @@ elif selected == 'Heart disease prediction':
     
 elif selected ==  'Parkinson`s disease pediction':
     #title
-    st.title('Parkinson`s disease prediction tool')
+    st.title('Parkinson`s disease prediction')
+    st.markdown('<style>div.block-container{padding-top:1rem}</style>',unsafe_allow_html=True)
+   
+    with st.expander('Expand this for more clarity on the attributes used in this prediction'):
+        st.subheader('Attribute Information',divider='green')
+        st.text('MDVP:Fo(Hz) - Average vocal fundamental frequency')
+        st.text('MDVP:Fhi(Hz) - Maximum vocal fundamental frequency')
+        st.text('MDVP:Flo(Hz) - Minimum vocal fundamental frequency')
+        st.text('MDVP:Jitter(%), MDVP:Jitter(Abs), MDVP:RAP, MDVP:PPQ, Jitter:DDP - Several measures of variation in fundamental frequency')
+        st.text('MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA - Several measures of variation in amplitude')  
+        st.text("NHR, HNR - Two measures of the ratio of noise to tonal components in the voice status - The health status of the subject (one) - Parkinson's, (zero) - healthy")
+        st.text(" RPDE, D2 - Two nonlinear dynamical complexity measures ")
+        st.text(" DFA - Signal fractal scaling exponent ")
+        st.text(" spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation ")
+        
     col1, col2, col3, col4, col5 = st.columns(5)
-
+ 
     with col1:
-        fo = st.text_input('MDVP:Fo(Hz)')
+        fo = st.text_input('MDVP-Fo(Hz)')
 
     with col2:
-        fhi = st.text_input('MDVP:Fhi(Hz)')
+        fhi = st.text_input('MDVP-Fhi(Hz)')
 
     with col3:
-        flo = st.text_input('MDVP:Flo(Hz)')
+        flo = st.text_input('MDVP-Flo(Hz)')
 
     with col4:
-        Jitter_percent = st.text_input('MDVP:Jitter(%)')
+        Jitter_percent = st.text_input('MDVP-Jitter(%)')
 
     with col5:
-        Jitter_Abs = st.text_input('MDVP:Jitter(Abs)')
+        Jitter_Abs = st.text_input('MDVP-Jitter(Abs)')
 
     with col1:
-        RAP = st.text_input('MDVP:RAP')
+        RAP = st.text_input('MDVP-RAP')
 
     with col2:
-        PPQ = st.text_input('MDVP:PPQ')
+        PPQ = st.text_input('MDVP-PPQ')
 
     with col3:
-        DDP = st.text_input('Jitter:DDP')
+        DDP = st.text_input('Jitter-DDP')
 
     with col4:
-        Shimmer = st.text_input('MDVP:Shimmer')
+        Shimmer = st.text_input('MDVP-Shimmer')
 
     with col5:
-        Shimmer_dB = st.text_input('MDVP:Shimmer(dB)')
+        Shimmer_dB = st.text_input('MDVP-Shimmer(dB)')
 
     with col1:
-        APQ3 = st.text_input('Shimmer:APQ3')
+        APQ3 = st.text_input('Shimmer-APQ3')
 
     with col2:
-        APQ5 = st.text_input('Shimmer:APQ5')
+        APQ5 = st.text_input('Shimmer-APQ5')
 
     with col3:
-        APQ = st.text_input('MDVP:APQ')
+        APQ = st.text_input('MDVP-APQ')
 
     with col4:
-        DDA = st.text_input('Shimmer:DDA')
+        DDA = st.text_input('Shimmer-DDA')
 
     with col5:
         NHR = st.text_input('NHR')
@@ -214,6 +233,7 @@ elif selected ==  'Parkinson`s disease pediction':
             parkinsons_diagnosis = "The person does not have Parkinson's disease"
 
     st.success(parkinsons_diagnosis)
+
 else:
     pass
 
