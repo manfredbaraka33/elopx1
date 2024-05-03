@@ -64,7 +64,7 @@ elif selected == 'Heart disease prediction':
     
     #title
    st.title('Heart disease prediction')
-   st.markdown('<style>div.block-container{padding-top:1rem}</style>',unsafe_allow_html=True)
+   st.markdown('<style>div.block-container{padding-top:2rem}</style>',unsafe_allow_html=True)
 
    col1, col2, col3 = st.columns(3)
 
@@ -131,7 +131,7 @@ elif selected == 'Heart disease prediction':
 elif selected ==  'Parkinson`s disease pediction':
     #title
     st.title('Parkinson`s disease prediction')
-    st.markdown('<style>div.block-container{padding-top:1rem}</style>',unsafe_allow_html=True)
+    st.markdown('<style>div.block-container{padding-top:2rem}</style>',unsafe_allow_html=True)
    
     with st.expander('Expand this for more clarity on the attributes used in this prediction'):
         st.subheader('Attribute Information',divider='green')
