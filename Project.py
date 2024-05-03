@@ -27,7 +27,7 @@ with st.sidebar:
 
 
 
-df = pd.read_csv("D:/New folder (4)/datasets/insurance.csv",encoding="ISO-8859-1")
+df = pd.read_csv("insurance.csv",encoding="ISO-8859-1")
 
 
 if selected == 'Elopyx1-1':
