@@ -20,11 +20,12 @@ parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 # the side bar for navigation
 with st.sidebar:
     selected =option_menu('Elopyx-Medics',
-                          ['Diabetes prediction',
+                          [  'Home',
+                              'Diabetes prediction',
                            'Heart disease prediction',
                            'Parkinson`s disease pediction'
                            ],
-                          icons=['droplet-fill','activity','person-walking'],
+                          icons=['🏠','droplet-fill','activity','person-walking'],
                           default_index=0
                           )
 
@@ -32,7 +33,26 @@ with st.sidebar:
     
     
 # diabetes prediction page
-if selected == 'Diabetes prediction':
+if selected == 'Home':
+    st.title("Welcome to Elopyx-Medics!")
+    st.write("Elopyx-Medics is an application for predicting health conditions using machine learning.")
+    st.write("Please select an option from the sidebar to make predictions.")
+    
+    st.header("Instructions:")
+    st.write("1. Select one of the options from the sidebar navigation.")
+    st.write("2. Fill in the required information on the prediction page.")
+    st.write("3. Click the button to get the prediction result.")
+    st.write("4. View the prediction result on the same page.")
+    
+    st.header("About the Models:")
+    st.write("The models used in this application are trained machine learning models that predict health conditions based on input features.")
+    st.write("These models have been trained on labeled datasets and are capable of making predictions with a certain level of accuracy.")
+    
+    st.header("Disclaimer:")
+    st.write("The predictions provided by this application are for informational purposes only.")
+    st.write("They should not be considered as medical advice, and users are advised to consult with a healthcare professional for any medical concerns.")
+
+elif selected == 'Diabetes prediction':
     # title 
     st.title('Diabetes prediction')
     st.markdown('<style>div.block-container{padding-top:2rem}</style>',unsafe_allow_html=True)
