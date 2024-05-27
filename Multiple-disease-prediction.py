@@ -16,10 +16,11 @@ diabetes_model = pickle.load(open("diabetes_model.sav",'rb'))
 heart_disease_model = pickle.load(open("heart.sav",'rb'))
 parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 
-# Define a custom theme
+
+# Define a custom theme with a blue primary color
 custom_theme = """
 [theme]
-primaryColor="#f63366"
+primaryColor="#007bff"  # Blue primary color
 backgroundColor="#ffffff"
 secondaryBackgroundColor="#f0f2f6"
 textColor="#262730"
