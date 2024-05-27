@@ -16,13 +16,18 @@ diabetes_model = pickle.load(open("diabetes_model.sav",'rb'))
 heart_disease_model = pickle.load(open("heart.sav",'rb'))
 parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 
-"""
+# Define a custom theme
+custom_theme = """
 [theme]
-primaryColor = "#0000FF"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F0F0"
-textColor = "#000000"
+primaryColor="#f63366"
+backgroundColor="#ffffff"
+secondaryBackgroundColor="#f0f2f6"
+textColor="#262730"
+font="sans serif"
 """
+
+# Apply the custom theme
+st.markdown(f'<style>{custom_theme}</style>', unsafe_allow_html=True)
 
 # the side bar for navigation
 with st.sidebar:
