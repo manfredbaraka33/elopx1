@@ -19,19 +19,17 @@ parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 
 # the side bar for navigation
 
-
-
-
-with st.sidebar:
-    # Custom CSS for styling the sidebar
-    st.markdown("""
+st.markdown("""
     <style>
         /* Change background color of selected sidebar section */
-        .element-container.sidebar .sidebar-content .stSelectbox div[data-baseweb="menu"] div:last-child {
+        .element-container.sidebar .sidebar-content .stSelectbox div[data-baseweb="menu"] div[data-baseweb="menu"] div[aria-selected="true"] {
             background-color: #28a745 !important; /* Change the color to Bootstrap success color */
         }
     </style>
-   """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+
+
+with st.sidebar:
     selected =option_menu('Elopyx-Medics',
                           [  'Home',
                             'Diabetes prediction',
