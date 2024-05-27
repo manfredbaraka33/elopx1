@@ -142,7 +142,7 @@ elif selected == 'Heart disease prediction':
             heart_diagnosis = 'The person is having heart disease'
         else:
             heart_diagnosis = 'The person does not have any heart disease'
-     st.success(heart_diagnosis)
+    st.success(heart_diagnosis)
      
 
 elif selected == 'Parkinson`s disease pediction':
@@ -216,9 +216,9 @@ elif selected == 'Parkinson`s disease pediction':
     # Button for Prediction    
     if st.button("Parkinson's Test Result"):
      # Check if any input field is empty
-     if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE:
+      if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE:
         st.warning("Please fill out all input fields.")
-     else:
+      else:
         user_input = [fo, fhi, flo, Jitter_percent, Jitter_Abs,
                       RAP, PPQ, DDP,Shimmer, Shimmer_dB, APQ3, APQ5,
                       APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
