@@ -127,25 +127,23 @@ elif selected == 'Heart disease prediction':
     with col1:
         thal = st.text_input('Thalassemia: 0 = normal; 1 = fixed defect; 2 = reversable defect')
 
-    # Check if any input field is empty
-    if not age or not sex or not cp or not trestbps or not chol or not fbs or not restecg or not thalach or not exang or not oldpeak or not slope or not ca or not thal:
+    # Code for Prediction
+    heart_diagnosis = ''
+    # Button for Prediction
+    if st.button('Heart Disease Test Result'):
+      # Check if any input field is empty
+      if not age or not sex or not cp or not trestbps or not chol or not fbs or not restecg or not thalach or not exang or not oldpeak or not slope or not ca or not thal:
         st.warning("Please fill out all input fields.")
-    else:
-        try:
-            # Code for Prediction
-            heart_diagnosis = ''
-            # Button for Prediction
-            if st.button('Heart Disease Test Result'):
-                user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
-                user_input = [float(x) for x in user_input]
-                heart_prediction = heart_disease_model.predict([user_input])
-                if heart_prediction[0] == 1:
-                    heart_diagnosis = 'The person is having heart disease'
-                else:
-                    heart_diagnosis = 'The person does not have any heart disease'
-            st.success(heart_diagnosis)
-        except Exception as e:
-            st.error("An error occurred during prediction. Please check your input and try again.")
+      else:
+        user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
+        user_input = [float(x) for x in user_input]
+        heart_prediction = heart_disease_model.predict([user_input])
+        if heart_prediction[0] == 1:
+            heart_diagnosis = 'The person is having heart disease'
+        else:
+            heart_diagnosis = 'The person does not have any heart disease'
+    st.success(heart_diagnosis)
+     
 
 elif selected == 'Parkinson`s disease pediction':
     # Display Parkinson's disease prediction page
@@ -210,16 +208,17 @@ elif selected == 'Parkinson`s disease pediction':
     with col2:
         PPE = st.text_input('PPE')
 
-    # Check if any input field is empty
-    if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE:
-        st.warning("Please fill out all input fields.")
+
 
     # Code for Prediction
     parkinsons_diagnosis = ''
 
     # Button for Prediction    
     if st.button("Parkinson's Test Result"):
-
+     # Check if any input field is empty
+     if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE:
+        st.warning("Please fill out all input fields.")
+     else:
         user_input = [fo, fhi, flo, Jitter_percent, Jitter_Abs,
                       RAP, PPQ, DDP,Shimmer, Shimmer_dB, APQ3, APQ5,
                       APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
