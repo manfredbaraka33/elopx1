@@ -18,24 +18,17 @@ parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 
 
 # the side bar for navigation
-# with st.sidebar:
-#     selected =option_menu('Elopyx-Medics',
-#                           ['Diabetes prediction',
-#                            'Heart disease prediction',
-#                            'Parkinson`s disease pediction'
-#                            ],
-#                           icons=['droplet-fill','activity','person-walking'],
-#                           default_index=0
-#                           )
-
 with st.sidebar:
-    selected = st.selectbox('Elopyx-Medics',
-                            ['Diabetes prediction',
-                             'Heart disease prediction',
-                             'Parkinson`s disease prediction'],
-                            index=0,
-                            format_func=lambda x: f'<i class="bi bi-{icon_list[options.index(x)]}"></i> {x}',
-                            )
+    selected =option_menu('Elopyx-Medics',
+                          ['Diabetes prediction',
+                           'Heart disease prediction',
+                           'Parkinson`s disease pediction'
+                           ],
+                          icons=['droplet-fill','activity','person-walking'],
+                          default_index=0
+                          )
+
+
     
     
 # diabetes prediction page
