@@ -16,19 +16,15 @@ diabetes_model = pickle.load(open("diabetes_model.sav",'rb'))
 heart_disease_model = pickle.load(open("heart.sav",'rb'))
 parkinsons_model = pickle.load(open("parkinson.sav",'rb'))
 
+"""
+[theme]
+primaryColor = "#0000FF"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F0F0"
+textColor = "#000000"
+"""
 
 # the side bar for navigation
-
-st.markdown("""
-    <style>
-        /* Change background color of selected sidebar section */
-        .element-container.sidebar .sidebar-content .stSelectbox div[data-baseweb="menu"] div[data-baseweb="menu"] div[aria-selected="true"] {
-            background-color: #28a745 !important; /* Change the color to Bootstrap success color */
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
 with st.sidebar:
     selected =option_menu('Elopyx-Medics',
                           [  'Home',
