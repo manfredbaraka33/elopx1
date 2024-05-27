@@ -13,6 +13,11 @@ diabetes_model = pickle.load(open("diabetes_model.sav", 'rb'))
 heart_disease_model = pickle.load(open("heart.sav", 'rb'))
 parkinsons_model = pickle.load(open("parkinson.sav", 'rb'))
 
+
+# Main code
+st.set_page_config(page_title="Elopyx-Medics", layout='wide', page_icon=":pill:")
+
+
 # Define a custom theme with a blue primary color
 custom_theme = """
 [theme]
@@ -26,8 +31,6 @@ font="sans serif"
 # Apply the custom theme
 st.markdown(f'<style>{custom_theme}</style>', unsafe_allow_html=True)
 
-# Main code
-st.set_page_config(page_title="Elopyx-Medics", layout='wide', page_icon=":pill:")
 
 # Sidebar navigation
 with st.sidebar:
