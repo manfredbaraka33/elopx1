@@ -140,9 +140,18 @@ def display_parkinsons_prediction(parkinsons_model):
         RPDE = st.text_input('RPDE')
     with col4:
         Jitter_percent = st.text_input('MDVP-Jitter(%)')
-        Jitter_Abs = st.text_input('MDVP-Jitter(Abs)')
+        Shimmer_dB = st.text_input('MDVP-Shimmer(dB)')
+        DDA = st.text_input('Shimmer-DDA')
+        spread1 = st.text_input('spread1')
+        D2 = st.text_input('D2')
     with col5:
-        Thal = st.text_input('Thal')
+        Jitter_Abs = st.text_input('MDVP-Jitter(Abs)')
+        APQ3 = st.text_input('Shimmer-APQ3')
+        DDA = st.text_input('Shimmer-DDA')
+        NHR = st.text_input('NHR')
+        spread2 = st.text_input('spread2')
+        PPE = st.text_input('PPE')
+        Thal = st.text_input('Thalassemia')
     
     # Check if any input field is empty
     if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not MDVP_Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE or not Thal:
