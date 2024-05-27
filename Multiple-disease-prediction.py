@@ -83,6 +83,10 @@ elif selected == 'Diabetes prediction':
     with col3:
        BloodPressure = st.text_input('Blood pressure value') 
        BMI = st.text_input('Body Mass Index')
+
+      # Check if any input field is empty
+    if not Pregnancies or not SkinThickness or not DiabetesPedigreeFunction or not Glucose or not Insulin or not Age or not BloodPressure or not BMI:
+        st.warning("Please fill out all input fields.")
     
  
     # code for prediction
@@ -141,6 +145,10 @@ elif selected == 'Heart disease prediction':
 
    with col1:
        thal = st.text_input('Thalassemia: 0 = normal; 1 = fixed defect; 2 = reversable defect')
+
+       # Check if any input field is empty
+   if not age or not sex or not cp or not trestbps or not chol or not fbs or not restecg or not thalach or not exang or not oldpeak or not slope or not ca or not thal:
+        st.warning("Please fill out all input fields.")
 
    # code for Prediction
    heart_diagnosis = ''
@@ -247,6 +255,10 @@ elif selected ==  'Parkinson`s disease pediction':
 
     with col2:
         PPE = st.text_input('PPE')
+
+        # Check if any input field is empty
+    if not fo or not fhi or not flo or not Jitter_percent or not Jitter_Abs or not RAP or not PPQ or not DDP or not Shimmer or not Shimmer_dB or not APQ3 or not APQ5 or not APQ or not DDA or not NHR or not HNR or not RPDE or not DFA or not spread1 or not spread2 or not D2 or not PPE:
+        st.warning("Please fill out all input fields.")
 
     # code for Prediction
     parkinsons_diagnosis = ''
