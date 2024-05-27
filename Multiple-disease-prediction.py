@@ -25,7 +25,7 @@ with st.sidebar:
                            'Heart disease prediction',
                            'Parkinson`s disease pediction'
                            ],
-                          icons=['🏠','droplet-fill','activity','person-walking'],
+                          icons=['home','droplet-fill','activity','person-walking'],
                           default_index=0
                           )
 
