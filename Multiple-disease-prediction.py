@@ -77,14 +77,16 @@ elif selected == 'Diabetes prediction':
         BloodPressure = st.text_input('Blood pressure value') 
         BMI = st.text_input('Body Mass Index')
 
-    # Check if any input field is empty
-    if not Pregnancies or not SkinThickness or not DiabetesPedigreeFunction or not Glucose or not Insulin or not Age or not BloodPressure or not BMI:
-        st.warning("Please fill out all input fields.")
+
     
     # Code for prediction
     diab_diagnosis = ''
     # Button for prediction
     if st.button("Diabetes prediction result"):
+      # Check if any input field is empty
+      if not Pregnancies or not SkinThickness or not DiabetesPedigreeFunction or not Glucose or not Insulin or not Age or not BloodPressure or not BMI:
+        st.warning("Please fill out all input fields.")
+      else:
         diab_diagnosis = diabetes_model.predict([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
         if (diab_diagnosis[0] == 0):
             diab_diagnosis = 'The person is not diabetic'
